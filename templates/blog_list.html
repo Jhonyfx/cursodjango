@@ -1,3 +1,8 @@
 <a href="{% url 'home'%}">Inicio</a>
 
 <a href="{% url 'blog:create'%}">Create</a>
+
+{% for post in posts%}
+    <a href="{% url 'blog:detail' post.id %}">{{post.title}}</a>
+    <hr>
+{% endfor%}
